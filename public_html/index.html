@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Prova Drag and drop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/spruce/bootstrap.min.css">
+        <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>-->
+        <!--<script src="js/angular.js" ></script>-->     
+    </head>
+    <body ng-app="ExampleApp" class="ng-scope">
+        <div class="container ng-scope" ng-controller="MainCtrl">
+            <div class="row">
+                <h1>ngDraggable Example</h1>
+            </div>
+
+            <ul class="draggable-objects">
+                <!-- ngRepeat: obj in draggableObjects -->
+                <li ng-repeat="obj in draggableObjects" class="ng-scope">
+                    <div ng-drag="true" ng-drag-data="obj" class="ng-binding" draggable="false" style=""> {{obj.name}} </div>
+                </li><!-- end ngRepeat: obj in draggableObjects -->
+            </ul>
+
+            <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)" class="dropped-objects">
+                <div ng-drag="false" ng-drop-data="resp" class="ng-binding" draggable="false" style=""> {{resp.name}} </div>
+            </div>
+
+        </div>
+        <footer style="margin-top:2000px;">footer</footer>      
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+        <!--<script src="js/angular.js" ></script>--> 
+        <script src="js/ngDraggable.js"></script>
+        <script src="script.js"></script>        
+
+    </body>
+</html>
+
